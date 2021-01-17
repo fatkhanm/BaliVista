@@ -1,0 +1,32 @@
+{
+  "name": "balivista",
+  "version": "1.0.0",
+  "description": "Test intern Bali Vista",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fatkhanm/BaliVista.git"
+  },
+  "author": "Fatkhan Masruri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fatkhanm/BaliVista/issues"
+  },
+  "homepage": "https://github.com/fatkhanm/BaliVista#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "^2.0.7",
+    "pino": "^6.11.0",
+    "sequelize": "^6.3.5"
+  }
+}
