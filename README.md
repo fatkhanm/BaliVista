@@ -36,6 +36,8 @@ Respnse:
 }
 ```
 3. /users/movies/favorite
+Respnse:
+```bash
 [
     {
         "title": "Fantasy Island",
@@ -54,6 +56,7 @@ Respnse:
         "url-poster": "https://m.media-amazon.com/images/M/MV5BOTIxZDRmYTgtYzU3YS00MTgwLTg2MTktMTM1ODcyNWQzMjM3XkEyXkFqcGdeQXVyMzY2NTg0NTA@._V1_SX300.jpg"
     }
 ]
+```
 
 
 
