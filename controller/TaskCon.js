@@ -7,7 +7,7 @@ const {User,Favorite} = require('../models/db')
 getMovie = (req,res)=>{
     jwt.verify(req.token,'kucinghitamnakal',(err,authData)=>{
         if(authData){
-            res.status(401)
+            res.status(403)
             res.send("Not Allowed")
         }
         res.status(403)
@@ -48,8 +48,18 @@ getFavMovie = (req,res)=>{
         }
     })
 }
+postFavMovie = (req,res)=>{
+    jwt.verify(req.token,'kucinghitamnakal',(err,authData)=>{
+        if(err){
+            res.status(403)
+        }else{
+            Favorite.create({'title': req.body.title, 'user_id':authData.user_id}).then(add => res.json(add))
+        }
+    })
+}
 module.exports ={
     getFavMovie,
     getMovie,
-    getMovieTitle
+    getMovieTitle,
+    postFavMovie
 }

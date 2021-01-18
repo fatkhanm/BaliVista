@@ -7,7 +7,7 @@ const loginCon = require('./controller/LoginCon')
 const Auth = require('./controller/Auth')
 const jwt = require('jsonwebtoken')
 const loggerContoller = require('./middleware/Logger')
-const {getMovieTitle,getMovie,getFavMovie} = require('./controller/TaskCon')
+const {getMovieTitle,getMovie,getFavMovie,postFavMovie} = require('./controller/TaskCon')
 
 const app = express()
 app.use(bodyParser.urlencoded({extended: true}))
@@ -29,11 +29,9 @@ app.post('/login',loginCon)
 
 //Movie
 //Post
-app.post('/movies/favorite',(req,res)=>{
-    Favorite.create(req.body).then(fav => res.json(fav))
-})
+app.post('/users/movies/favorite',loggerContoller,Auth,postFavMovie)
 //Get
 app.get('/movies',loggerContoller,Auth,getMovie)
 app.get('/movies/:title',loggerContoller,Auth,getMovieTitle)
-app.get('/movies/favorite',loggerContoller,Auth,getFavMovie)
+app.get('/users/movies/favorite',loggerContoller,Auth,getFavMovie)
 app.listen(3000)
